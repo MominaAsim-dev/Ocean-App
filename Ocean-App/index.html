@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ocean World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bubble-container"></div>
+    <div class="fish-container"></div>
+
+<!-- LOGIN SECTION -->
+<div id="loginContainer" class="login-container">
+    <h2>Welcome to Ocean World 🌊</h2>
+    <p class="short-desc">💬 Product prices are available in the chatbot</p>
+    <input type="text" id="username" placeholder="Enter Username">
+    <input type="password" id="password" placeholder="Enter Password">
+    <label>
+    <input type="checkbox" id="rememberMe"> Remember Me
+    </label>
+    <button onclick="login()">Login</button>
+<button onclick="signup()">Signup</button>
+
+</div>
+
+<!-- MAIN APP -->
+<div id="mainApp" class="hidden">
+<audio id="bubbleSound" src="sounds/bubble.mp3"></audio>
+
+
+    <!-- TOP BAR -->
+    <header>
+        <img src="images/menu-icon.png" class="menu-icon" onclick="toggleSidebar()">
+        <h1>Ocean World</h1>
+        <img src="images/shark.png" class="shark-btn" onclick="showShark()">
+    </header>
+
+    <!-- SIDEBAR -->
+    <div id="sidebar" class="sidebar">
+        <h3>Explore</h3>
+        <button onclick="showProducts()">Products</button>
+        <button onclick="toggleChat()">Chatbot</button>
+        <button onclick="toggleDarkMode()">Dark Mode</button>
+        <button onclick="logout()">Logout</button>
+        <button onclick="openCart()">Cart 🛒</button>
+
+    </div>
+
+    <!-- PRODUCTS SECTION -->
+    <section id="productsSection" class="products">
+    <div class="product-card" data-name="Glow Coral Lamp">
+        <img src="images/product1.jpg">
+        <h4>Glow Coral Lamp</h4>
+        <span class="remove-product hidden">×</span>
+    </div>
+    <div class="product-card" data-name="Sea Pearl Necklace">
+        <img src="images/product2.jpg">
+        <h4>Sea Pearl Necklace</h4>
+        <span class="remove-product hidden">×</span>
+    </div>
+    <div class="product-card" data-name="Ocean Wave Speaker">
+        <img src="images/product3.jpg">
+        <h4>Ocean Wave Speaker</h4>
+        <span class="remove-product hidden">×</span>
+    </div>
+    <div class="product-card" data-name="Shell Mirror">
+        <img src="images/product4.jpg">
+        <h4>Shell Mirror</h4>
+        <span class="remove-product hidden">×</span>
+    </div>
+    <div class="product-card" data-name="Underwater Camera">
+        <img src="images/product5.jpg">
+        <h4>Underwater Camera</h4>
+        <span class="remove-product hidden">×</span>
+    </div>
+    <div class="product-card" data-name="Starfish Lamp">
+        <img src="images/product6.jpg">
+        <h4>Starfish Lamp</h4>
+        <span class="remove-product hidden">×</span>
+    </div>
+</section>
+
+<!-- Save Selection Button -->
+<button id="saveCartBtn" class="hidden">Save Selection ✅</button>
+    </section>
+    <!-- CHATBOT -->
+    <div id="chatbot" class="chatbot hidden">
+        <div class="chat-header">Ocean Bot 🤖</div>
+        <div id="chatMessages" class="chat-messages"></div>
+        <input type="text" id="chatInput" placeholder="Ask about ocean...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- SHARK POPUP -->
+    <div id="sharkPopup" class="shark-popup">
+        <img src="images/shark.png">
+        <audio id="sharkSound" src="sounds/shark-sound.mp3"></audio>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

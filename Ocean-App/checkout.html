@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout - Ocean World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="checkout-container">
+        <h2>Checkout 🛒</h2>
+        <form id="checkoutForm">
+            <label>Name:</label>
+            <input type="text" id="customerName" required>
+
+            <label>Email:</label>
+            <input type="email" id="customerEmail" required>
+
+            <label>Phone Number:</label>
+            <input type="tel" id="customerPhone" required>
+
+            <label>Any Note?</label>
+            <textarea id="customerNote" placeholder="Optional..."></textarea>
+
+            <label>Payment Method:</label>
+            <select id="paymentMethod" required>
+                <option value="Credit Card">Credit Card</option>
+                <option value="PayPal">PayPal</option>
+                <option value="Cash on Delivery">Cash on Delivery</option>
+            </select>
+
+            <h3>Products Selected:</h3>
+            <div id="checkoutProducts" class="checkout-products"></div>
+
+            <h3>Total: $<span id="totalPrice">0</span></h3>
+            <button type="submit">Buy Now</button>
+        </form>
+    </div>
+    <script src="checkout.js"></script>
+</body>
+</html>
